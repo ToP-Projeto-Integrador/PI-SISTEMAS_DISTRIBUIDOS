@@ -21,11 +21,19 @@ ToP é um projeto feito para auxiliar na organização de estoques de pequenas e
 -->
 
 <!-- COMPLETAR RESPONSAVEL PELO BANCO
-- [comment]: <> ([BANCO](https://www.postgresql.org/)
+- [BANCO](https://www.postgresql.org/)
 
 -->
 
 <strong>A base para a contrução do sistema é o docker com o intuito de agilizar e ter todos os desenvolvedores na mesma versão de todas as dependecncias, evitando assim bugs e erros.</strong>
+
+### Instalação
+
+Para começar certifique-se de ter todas as depedencias do projeto instaladas. A baixo os links de programas que você vai precisar:
+
+- ![DOCKER ENGINE](https://docs.docker.com/engine/install/ubuntu/#install-using-the-repository)
+- ![DOCKER DESKTOP](https://docs.docker.com/desktop/install/ubuntu/#install-docker-desktop)
+
 
 ### Separando as coisas
 
@@ -53,4 +61,4 @@ Baixando dependencias do docker:
 Iniciando o container:
 - ```docker-compose up```
 
-O projeto django já esta aberto na sua maquina <a href="0.0.0.0:80" target="_blank">clique aqui</a>, bem facil né?
+O projeto django já esta aberto na sua maquina, bem facil né?
