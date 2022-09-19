@@ -53,4 +53,4 @@ Baixando dependencias do docker:
 Iniciando o container:
 - ```docker-compose up```
 
-O projeto django já esta aberto na sua maquina <a href="0.0.0.0:80">clique aqui</a>, bem facil né?
+O projeto django já esta aberto na sua maquina <a href="0.0.0.0:80" target="_blank">clique aqui</a>, bem facil né?
