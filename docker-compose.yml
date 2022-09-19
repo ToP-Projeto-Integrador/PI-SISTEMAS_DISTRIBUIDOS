@@ -1,0 +1,27 @@
+version: "3.9"
+services:
+  PI-Django:
+    build: .
+    volumes:
+    - .:/estagio
+    ports:
+      - 80:8000
+    image: python
+    container_name: PI-Django
+    command: python3 manage.py runserver 0.0.0.0:8000
+    depends_on:
+      - database
+  
+  database:
+    image: mariadb
+    container_name: PI-MariaDB
+    volumes:
+      - ./data:/var/lib/mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD=top
+      - MARIADB_DATABASE=top
+      - MARIADB_USER=top
+      - MARIADB_PASSWORD=top
+    ports:
+      - 3806:3806
+
