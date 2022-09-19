@@ -4,7 +4,7 @@ Esse é um sistema feito para a cadeira de PI: Sistemas Distribuídos do curso d
 
 ##### ToP - Treatments of Package
 
-Explicar o ToP aqui
+ToP é um projeto feito para auxiliar na entrega de pacotes para pequenas empresas, com a manipulação de dados, frotas e pedidos. ToP vai conseguir levar pequenas encomendas a grandes encomendas aos pequenos comerciantes de localidade pequenas tanto de capital, quanto de interior. 
 
 <!-- COLOCAR O LINK DO GITHUB TEAM AQUI -->
 <strong>Veja os membros da nossa <a href="https://github.com/orgs/ToP-Projeto-Integrador/people">equipe</a></strong>.
