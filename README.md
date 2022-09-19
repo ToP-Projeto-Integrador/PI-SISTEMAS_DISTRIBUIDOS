@@ -31,8 +31,8 @@ ToP é um projeto feito para auxiliar na organização de estoques de pequenas e
 
 Para começar certifique-se de ter todas as depedencias do projeto instaladas. A baixo os links de programas que você vai precisar:
 
-- ![DOCKER ENGINE](https://docs.docker.com/engine/install/ubuntu/#install-using-the-repository)
-- ![DOCKER DESKTOP](https://docs.docker.com/desktop/install/ubuntu/#install-docker-desktop)
+- [DOCKER ENGINE](https://docs.docker.com/engine/install/ubuntu/#install-using-the-repository)
+- [DOCKER DESKTOP](https://docs.docker.com/desktop/install/ubuntu/#install-docker-desktop)
 
 
 ### Separando as coisas
