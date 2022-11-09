@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+  {% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ToP</title>
+    <link rel="stylesheet" href="{% static 'site/css/style.css' %}">
+    <script src="{% static 'site/js/script.js'%}" defer></script>
+
+
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="brand-title">ToP</div>
+        <a href="#" class="toggle-button">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </a>
+        <div class="navbar-links">
+            <ul>
+                <li><a class="linke" href="{% url 'login' %}">Inicio</a></li>
+                <li><a href="#">Estoque</a></li>
+                <li><a href="#">Serviços</a></li>
+            </ul>
+        </div>
+    </nav>
+    <main>
+        <section class="page1">
+            <div class="geral">
+                <div class="grid-container">
+                    <div class="grid-item">
+                        <div class="subtitle">
+                            <h2>Bem vindo a <h3>ToP</h3>
+                            </h2>
+                        </div>
+                        <div class="title">
+                            <h1>
+                                A organização que<br>
+                                sua empresa necessita
+                            </h1>
+                        </div>
+
+                        <div class="button">
+                            <button><img src="{% static 'img/whatsapp.svg'%}" class="image" alt="">Revise seu Estoque</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="grid-container2">
+                    <img src="{% static 'img/image1.png'%}" alt="" class="image1">
+                </div>
+            </div>
+        </section>
+
+        <section class="meio">
+            <br>
+            <br>
+
+            <div class="card0">
+                <div class="title1">
+                    <div class="texto">
+                        <h1>+100</h1><br>
+                        <h2>Empresas atendidas</h2>
+                    </div>
+                </div>
+                <div class="title2">
+                    <div class="texto1">
+                        <h1>24h</h1><br>
+                        <h2>Suporte especializado</h2>
+                    </div>
+                </div>
+                <div class="title3">
+                    <div class="texto0">
+                        <h1>+2</h1><br>
+                        <h2>Anos no mercado</h2>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="serviços">
+            <div class="titulo01">
+                <br>
+                <br>
+                <br>
+                <BR>
+                <h3>SERVIÇOS</h3>
+                <h1>Como podemos ajudá-lo a <br> organizar o seu estoque?</h1>
+            </div>
+
+            <div class="cards">
+                <div class="cardinho">
+                    <img src="{% static 'img/verificado.svg'%}" alt="">
+                    <h2>Controle de Estoque</h2>
+                    <h3>Amet minim mollit non deserunt <br>ullamco est sit aliqua dolor do amet sint. <br>Velit officia
+                        consequat duis enim.</h3>
+                </div>
+                <div class="cardinho">
+                    <img src="{% static 'img/verificado.svg'%}" alt="">
+                    <h2>Reposicionamento</h2>
+                    <h3>Amet minim mollit non deserunt <br>ullamco est sit aliqua dolor do amet sint.<br> Velit officia
+                        consequat duis enim.</h3>
+                </div>
+                <div class="cardinho">
+                    <img src="{% static 'img/verificado.svg'%}" alt="">
+                    <h2>Monitoramento</h2>
+                    <h3>Amet minim mollit non deserunt<br> ullamco est sit aliqua dolor do amet sint.<br> Velit officia
+                        consequat duis enim.</h3>
+                </div>
+            </div>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+        </section>
+
+        <section class="sobre">
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <div class="linha">
+                <div class="imagem02">
+                    <img src="{% static 'img/image2.png'%}" alt="">
+                </div>
+                <div class="descrição">
+
+                    <h4>Sobre nós</h4>
+                    <br>
+                    <h2>Seja grande,<br>
+                        independente do seu tamanho</h2>
+                    <br>
+                    <h3>ToP é um projeto feito para auxiliar na organização de estoques de<br>
+                        pequenas empresas, em localidades diversas. Muitos negócios se<br>
+                        encontram em bagunça, falta de organização, pois ainda trabalham <br>
+                        com papel e documentação física, fazendo com que muitos problemas<br>
+                        apareçam. Com um sistema acessível para todos os empresários e <br>
+                        donos de pequenos negócios, a ToP vem para ajudar</h3>
+                </div>
+            </div>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+        </section>
+        <section class="contato">
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <div class="linha3">
+                <div class="contact">
+                    <div class="titulo003">
+                        <h2>
+                            Entre em contato <br> com
+                            a gente!
+                        </h2>
+                    </div>
+                    <div class="botoes">
+                        <div class="botao1">
+                            <button class="botao1"><img src="{% static 'img/localizacao.svg'%}" alt="">Lorem Ipsum has been the
+                                industry's</button>
+                        </div>
+                        <div class="botao">
+                            <button class="botao"><img src="{% static 'img/email.svg'%}" alt="">contact@ToP.com</button>
+                        </div>
+                        <br>
+                        <br>
+                        <br>
+                        <div class="button">
+                            <button><img src="{% static 'img/whatsapp.svg'%}" alt="">Revise seu Estoque</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="imagem">
+                    <img src="{% static 'img/image3.png'%}" alt="">
+                </div>
+            </div>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+        </section>
+    </main>
+    <footer>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <div class="linha1">
+            <div class="brand-title">ToP</div>
+            <div class="sociais">
+                <img src="{% static 'img/instagram 1.svg'%}" alt="">
+                <img src="{% static 'img/facebook 1.svg'%}" alt="">
+                <img src="{% static 'img/youtube 1.svg'%}" alt="">
+            </div>
+        </div>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <div class="fim">Todos os direitos reservados.©2022 - ToP</div>
+
+    </footer>
+
+</body>
+
+</html>

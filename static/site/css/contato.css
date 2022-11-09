@@ -1,0 +1,78 @@
+.contact {
+    width: auto;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+
+}
+
+.titulo003 h2 {
+    font-size: 50px;
+
+}
+
+.linha3 {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-evenly;
+}
+
+
+.botao1 {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    width: 70%;
+    height: auto;
+    /*padding: 1%;*/
+    background-color: #FFFFFF;
+    color: black;
+    font-size: 16px;
+    font-weight: 500;
+    border: none;
+    border-radius: 10px;
+    justify-content: space-evenly;
+}
+
+.botao {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    width: 70%;
+    height: auto;
+    /*padding: 1%;*/
+    background-color: #FFFFFF;
+    color: black;
+    font-size: 16px;
+    font-weight: 500;
+    border: none;
+    border-radius: 10px;
+    justify-content: space-evenly;
+}
+
+@media only screen and (max-width: 600px) {
+    .linha3 {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+    }
+
+    .contact {
+        width: auto;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 2%;
+    }
+
+    .imagem {
+        margin-left: auto;
+        margin-right: auto;
+    }
+}

@@ -3,8 +3,11 @@ from django.shortcuts import render
 from django.contrib.auth import authenticate, login
 
 
-def ladingpage(request):
-    return render(request, 'landing.html')
+def site(request):
+    return render(request, 'site.html')
+
+def home(request):
+    return render(request, 'home.html')
 
 def login_view(request):
     if request.method == 'GET':
