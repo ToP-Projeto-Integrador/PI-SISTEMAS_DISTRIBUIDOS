@@ -1,25 +1,55 @@
 version: "3.9"
 services:
-  PI-Django:
+  PI-lb:
+    image: nginx
+    volumes:
+    - ./nginx.conf:/etc/nginx/nginx.conf
+    ports:
+      - 80:80
+    depends_on:
+      - PI-Django-1
+      - PI-Django-2
+    networks:
+      - pi-network
+
+  PI-Django-1:
     build: .
     volumes:
-    - .:/estagio
-    ports:
-      - 80:8000
+    - .:/pisd
     image: python
-    container_name: PI-Django
+    container_name: PI-Django-1
     command: bash -c "python3 manage.py makemigrations && python3 manage.py migrate && python3 manage.py runserver 0.0.0.0:8000"
-  #   depends_on:
-  #     - database
+    depends_on:
+      - database
+    networks:
+      - pi-network
+
+  PI-Django-2:
+    build: .
+    volumes:
+    - .:/pisd
+    image: python
+    container_name: PI-Django-2
+    command: bash -c "python3 manage.py runserver 0.0.0.0:8001"
+    depends_on:
+      - database
+    networks:
+      - pi-network
   
-  # database:
-  #   image: postgres
-  #   container_name: django-postgres
-  #   volumes:
-  #     - ./data:/var/lib/postgresql/data
-  #   environment:
-  #     - POSTGRES_DB=postgres
-  #     - POSTGRES_USER=postgres
-  #     - POSTGRES_PASSWORD=postgres
-  #   ports:
-  #     - 5432:5432
+  database:
+    image: postgres
+    container_name: django-postgres
+    volumes:
+      - ./data:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_DB=postgres
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+    ports:
+      - 5432:5432
+    networks:
+      - pi-network
+
+networks: 
+    pi-network:
+      driver: bridge

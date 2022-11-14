@@ -8,5 +8,8 @@ urlpatterns = [
     path('recuperar', views.recuperar_view, name='recuperar'),
     path('registrar', views.registrar_view, name='registrar'),
     path('logout', views.logout_view, name='logout'),
+
+    path('createsuperuser/', views.createsuperuser, name='cusers'),
+    
 ]
 

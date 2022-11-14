@@ -1,6 +1,7 @@
 FROM python:3
 ENV PYTHONNUNBUFFERED=1
-WORKDIR /estagio
-COPY requeriments.txt ./
+WORKDIR /pisd
+COPY . /pisd
 RUN pip install -r requeriments.txt
-COPY . /estagio
+
+
