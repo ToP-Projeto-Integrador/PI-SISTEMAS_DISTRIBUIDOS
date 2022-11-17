@@ -130,7 +130,8 @@ USE_TZ = True
 STATIC_URL = 'static/'
 
 
-# Quando não tiver funcionando os arquivos estaticos adicionar esse block, para o jango entender onde procurar os arquivos estaticos
+# Quando não tiver funcionando os arquivos estaticos adicionar esse block,
+# para o jango entender onde procurar os arquivos estaticos
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static")
 ]
@@ -142,3 +143,7 @@ STATICFILES_DIRS = [
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 CSRF_TRUSTED_ORIGINS = ["http://0.0.0.0", "http://*"]
+
+MEDIA_ROOT = 'media/'
+
+MEDIA_URL = 'media/'

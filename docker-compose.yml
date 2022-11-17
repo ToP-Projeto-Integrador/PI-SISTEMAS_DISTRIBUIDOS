@@ -50,6 +50,19 @@ services:
     networks:
       - pi-network
 
+
+  backup:
+    image: python:3
+    container_name: pi-backup
+    command: bash -c "cd backup && apt-get -y install libpq-dev gcc && pip install psycopg2-binary && python3 backup.py"
+    volumes:
+      - ./backup/:/backup/
+    networks:
+      - pi-network
+    depends_on:
+      - database
+
+
 networks: 
     pi-network:
       driver: bridge
