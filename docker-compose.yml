@@ -1,7 +1,8 @@
 version: "3.9"
 services:
-  PI-lb:
+  PI-Nginx:
     image: nginx
+    container_name: PI-Nginx
     volumes:
     - ./nginx.conf:/etc/nginx/nginx.conf
     ports:
@@ -21,6 +22,7 @@ services:
     command: bash -c "python3 manage.py makemigrations && python3 manage.py migrate && python3 manage.py runserver 0.0.0.0:8000"
     depends_on:
       - database
+      - PI-Django-2
     networks:
       - pi-network
 

@@ -1,7 +1,11 @@
+import csv
+
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.models import User
 from django.http import HttpResponse
 from django.shortcuts import redirect, render
+
+from .forms import UploadFileForm
 
 
 def site_view(request):
@@ -37,17 +41,36 @@ def recuperar_view(request):
         pass
 
 
+def logout_view(request):
+    logout(request)
+    return redirect('login')
+
+
+def admin_view(request):
+    return render()
+
+
 def registrar_view(request):
     if request.method == 'GET':
-        return render(request, 'login/registrar.html')
+        return render(request, 'config/registrar.html')
 
     if request.method == 'POST':
         pass
 
 
-def logout_view(request):
-    logout(request)
-    return redirect('login')
+def backup_view(request):
+    if request.method == 'GET':
+        return render(request, 'config/backup.html')
+
+    elif request.method == 'POST':
+        form = UploadFileForm(request.POST, request.FILES)
+        file = form.save()
+
+        # with open(file, newline='') as csvfile:
+        #     spamreader = csv.reader(csvfile, delimiter=' ', quotechar='|')
+        #     for row in spamreader:
+        #         print(', '.join(row))
+        return render(request, 'config/backup.html')
 
 
 def createsuperuser(request):

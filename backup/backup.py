@@ -1,5 +1,4 @@
 import sys
-from time import sleep
 
 import psycopg2
 
@@ -24,21 +23,20 @@ def backup():
 
             # f.write("insert into auth_user values (" + str(row) + ");")
 
-    except psycopg2.DatabaseError as e:
-        print(f'Backup Error {e}')
+    except psycopg2.DatabaseError as error:
+        print(f'Backup Error {error}')
         sys.exit(1)
 
     finally:
         if con:
             con.close()
 
+    f = open('./tables/backup_tables.csv', 'w')
     for i in tables:
         if i in ['auth_group_permissions', 'auth_group', 'auth_permission', 'auth_user_groups', 'auth_user_user_permissions', 'django_content_type', 'django_migrations']:
             pass
 
         else:
-            f = open(f'./tables/{i}.csv', 'w')
-
             try:
                 con = psycopg2.connect(host='database', database='postgres',
                                        user='postgres', password='postgres')
@@ -47,21 +45,15 @@ def backup():
 
                 for row in cur:
                     row = str(row).replace(', ', ';')
-                    f.write(f"{row[1:-1:]}\n")
 
-                f.close()
+                    f.write(f"{i};{row[1:-1:]}\n")
 
-            except psycopg2.DatabaseError as e:
-                print(f'Backup Error {e}')
+            except psycopg2.DatabaseError as error:
+                print(f'Backup Error {error}')
                 sys.exit(1)
 
             finally:
                 if con:
                     con.close()
 
-
-while True:
-    print("Realizando Backup das Tabelas")
-    backup()
-    print("Backup Realizado")
-    sleep(10800)
+backup()

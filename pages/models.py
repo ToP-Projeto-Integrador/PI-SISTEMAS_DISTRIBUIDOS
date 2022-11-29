@@ -45,3 +45,6 @@ class Produto(models.Model):
     )
 
     quantidade = models.IntegerField()
+
+class UploadFile(models.Model):
+    file = models.FileField(upload_to="backup", null=False)

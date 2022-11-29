@@ -1,0 +1,145 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}
+Envie o Arquivo de Backup
+{% endblock title %}
+
+{% block style %}
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500&display=swap');
+
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+font-family: 'Poppins', sans-serif;
+}
+
+.containe {
+max-width: 650px;
+width: 100%;
+padding: 30px;
+background: #fff;
+}
+
+.drag-area {
+height: 250px;
+border: 3px dashed #e0eafc;
+display: flex;
+align-items: center;
+justify-content: center;
+flex-direction: column;
+margin: 10px auto;
+}
+
+.drag-area .icon {
+font-size: 45px;
+color: #1683ff;
+}
+
+.drag-area .header {
+font-size: 20px;
+font-weight: 500;
+color: #34495e;
+}
+
+.drag-area .support {
+font-size: 12px;
+color: gray;
+margin: 10px 0 15px 0;
+}
+
+.drag-area .button {
+font-size: 20px;
+font-weight: 500;
+color: #1683ff;
+cursor: pointer;
+}
+
+.drag-area.active {
+border: 2px solid #1683ff;
+}
+
+.drag-area img {
+width: 100%;
+height: 100%;
+object-fit: cover;
+}
+
+
+
+{% endblock style %}
+
+{% block body %}
+<div class="container">
+    <div class="row">
+        <div class="col d-flex justify-content-center align-items-center" style="height: 100vh">
+            <div class="card col-7">
+                <div class="card-header text-center">
+                    Envie o Arquivo de Backup
+                </div>
+                <div class="card-body" style="height: auto">
+                    <form class="box" method="post" action="{% url 'backup' %}" enctype="multipart/form-data">
+                        {% csrf_token %}
+                        <div class="containe">
+                            <div class="drag-area">
+                                <div class="icon">
+                                    <i class="bi bi-filetype-csv"></i>
+                                </div>
+
+                                <span class="header">Arraste e Solte</span>
+                                <span class="header">ou <span class="button">procure o arquivo</span></span>
+                                <input type="file" name="file" hidden />
+                                <span class="support">Support: CSV</span>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Upload</button>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock body %}
+
+{% block script %}
+const dropArea = document.querySelector('.drag-area');
+const dragText = document.querySelector('.header');
+
+let button = dropArea.querySelector('.button');
+let input = dropArea.querySelector('input');
+
+let file;
+
+button.onclick = () => {
+input.click();
+};
+
+// when browse
+input.addEventListener('change', function () {
+file = this.files[0];
+dropArea.classList.add('active');
+});
+
+// when file is inside drag area
+dropArea.addEventListener('dragover', (event) => {
+event.preventDefault();
+dropArea.classList.add('active');
+dragText.textContent = 'Solte para fazer upload';
+});
+
+// when file leave the drag area
+dropArea.addEventListener('dragleave', () => {
+dropArea.classList.remove('active');
+dragText.textContent = 'Arraste e Solte';
+});
+
+// when file is dropped
+dropArea.addEventListener('drop', (event) => {
+event.preventDefault();
+
+file = event.dataTransfer.files[0]; // grab single file even of user selects multiple files
+});
+{% endblock script %}

@@ -1,0 +1,2 @@
+crontab -e
+0 */3 * * * cd /home/jorgeluiz/projects/PI-SISTEMAS_DISTRIBUIDOS/ && docker-compose up backup > ./backup/backup.log

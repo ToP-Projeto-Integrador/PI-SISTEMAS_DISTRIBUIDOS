@@ -11,6 +11,9 @@ urlpatterns = [
     path('recuperar', views.recuperar_view, name='recuperar'),
     path('registrar', views.registrar_view, name='registrar'),
     path('logout', views.logout_view, name='logout'),
+    path('config', views.admin_view, name='config'),
+    path('config/registrar', views.registrar_view, name='registrar'),
+    path('config/backup',  views.backup_view, name="backup"),
 
     path('createsuperuser/', views.createsuperuser, name='cusers'),
 
