@@ -12,8 +12,14 @@ def site_view(request):
     return render(request, 'site.html')
 
 
-def home_view(request):
+def home(request):
     return render(request, 'home.html')
+
+def form(request):
+    return render(request, 'form.html')
+
+def profile(request):
+    return render(request, 'profile.html')
 
 
 def login_view(request):
