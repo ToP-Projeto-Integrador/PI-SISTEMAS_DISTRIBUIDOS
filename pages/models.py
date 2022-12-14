@@ -1,21 +1,17 @@
 import os
 
-from django.db import models
 from django.contrib.auth.models import User
-
+from django.db import models
 
 # Create your models here.
 
 
-def content_file_name(instance, filename):
-    ext = filename.split('.')[-1]
-    filename = f"product_{instance.name}_{instance.id:0>4}.{ext}"
-    return os.path.join('uploads', filename)
-
-
 class Produto(models.Model):
     proprietario = models.ForeignKey(User, on_delete=models.PROTECT)
-    icon = models.FileField(upload_to=content_file_name, max_length=100)
+
+    icon = models.FileField(upload_to="product_icons",
+                            max_length=100, null=False, blank=True, default="default.jpg")
+
     nome = models.CharField(
         max_length=130,
         null=False,
@@ -28,13 +24,19 @@ class Produto(models.Model):
         blank=False
     )
 
-    tipo_produto_choices = [
+    tipo = models.CharField(
+        max_length=255,
+        null=False,
+        blank=False
+    )
+
+    perecivel_produto_choices = [
         ('0', 'Não'),
         ('1', 'Sim')
     ]
 
-    Perecivel = models.CharField(
-        choices=tipo_produto_choices,
+    perecivel = models.CharField(
+        choices=perecivel_produto_choices,
         max_length=3,
         default=0
     )
@@ -46,5 +48,6 @@ class Produto(models.Model):
 
     quantidade = models.IntegerField()
 
+
 class UploadFile(models.Model):
-    file = models.FileField(upload_to="backup", null=False)
+    file = models.FileField(upload_to="backup", null=True, blank=True)

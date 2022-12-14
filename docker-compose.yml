@@ -41,8 +41,8 @@ services:
   database:
     image: postgres
     container_name: django-postgres
-    volumes:
-      - ./data:/var/lib/postgresql/data
+    # volumes:
+    #   - ./data:/var/lib/postgresql/data
     environment:
       - POSTGRES_DB=postgres
       - POSTGRES_USER=postgres
@@ -55,10 +55,13 @@ services:
 
   backup:
     image: python:3
+    build:
+      context: .
+      dockerfile: Dockerfile_backup.yml
     container_name: pi-backup
-    command: bash -c "cd backup && apt-get -y install libpq-dev gcc && pip install psycopg2-binary && python3 backup.py"
     volumes:
       - ./backup/:/backup/
+    command: bash -c "python3 backup.py"
     networks:
       - pi-network
     depends_on:

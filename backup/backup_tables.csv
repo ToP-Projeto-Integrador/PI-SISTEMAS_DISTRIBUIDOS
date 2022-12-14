@@ -1,0 +1,22 @@
+auth_user;1;'pbkdf2_sha256$390000$xW2qdRMjXMONVEYpfv29sc$NOgqBtNOskR6UZZca83eNYWKxrGhvV8UvvHCxnyXJYI=';datetime.datetime(2022;12;14;16;28;2;587615;tzinfo=datetime.timezone.utc);True;'admin';'';'';'';True;True;datetime.datetime(2022;12;14;16;5;41;275033;tzinfo=datetime.timezone.utc)
+django_admin_log;1;datetime.datetime(2022;12;14;16;14;48;261333;tzinfo=datetime.timezone.utc);'1';'Produto object (1)';1;'[{"added": {}}]';7;1
+django_admin_log;2;datetime.datetime(2022;12;14;16;18;37;874924;tzinfo=datetime.timezone.utc);'1';'Produto object (1)';2;'[{"changed": {"fields": ["Quantidade"]}}]';7;1
+django_admin_log;3;datetime.datetime(2022;12;14;16;21;40;444382;tzinfo=datetime.timezone.utc);'1';'Produto object (1)';2;'[{"changed": {"fields": ["Quantidade"]}}]';7;1
+django_admin_log;4;datetime.datetime(2022;12;14;16;30;50;102413;tzinfo=datetime.timezone.utc);'1';'Produto object (1)';3;'';7;1
+django_admin_log;5;datetime.datetime(2022;12;14;16;31;14;7523;tzinfo=datetime.timezone.utc);'2';'Produto object (2)';1;'[{"added": {}}]';7;1
+django_admin_log;6;datetime.datetime(2022;12;14;16;36;28;906974;tzinfo=datetime.timezone.utc);'3';'Produto object (3)';1;'[{"added": {}}]';7;1
+django_admin_log;7;datetime.datetime(2022;12;14;16;45;35;191404;tzinfo=datetime.timezone.utc);'2';'Produto object (2)';2;'[]';7;1
+django_admin_log;8;datetime.datetime(2022;12;14;16;47;40;434001;tzinfo=datetime.timezone.utc);'2';'Produto object (2)';2;'[{"changed": {"fields": ["Icon"]}}]';7;1
+django_admin_log;9;datetime.datetime(2022;12;14;16;47;52;956240;tzinfo=datetime.timezone.utc);'2';'Produto object (2)';2;'[{"changed": {"fields": ["Icon"]}}]';7;1
+django_admin_log;10;datetime.datetime(2022;12;14;16;48;37;512891;tzinfo=datetime.timezone.utc);'2';'Produto object (2)';2;'[]';7;1
+django_admin_log;11;datetime.datetime(2022;12;14;16;48;58;79286;tzinfo=datetime.timezone.utc);'2';'Produto object (2)';2;'[{"changed": {"fields": ["Icon"]}}]';7;1
+django_admin_log;12;datetime.datetime(2022;12;14;16;49;9;474589;tzinfo=datetime.timezone.utc);'2';'Produto object (2)';2;'[{"changed": {"fields": ["Icon"]}}]';7;1
+django_admin_log;13;datetime.datetime(2022;12;14;16;51;0;762207;tzinfo=datetime.timezone.utc);'2';'Produto object (2)';2;'[]';7;1
+django_admin_log;14;datetime.datetime(2022;12;14;16;52;21;38908;tzinfo=datetime.timezone.utc);'2';'Produto object (2)';2;'[]';7;1
+django_admin_log;15;datetime.datetime(2022;12;14;16;52;43;49071;tzinfo=datetime.timezone.utc);'4';'Produto object (4)';1;'[{"added": {}}]';7;1
+django_admin_log;16;datetime.datetime(2022;12;14;16;53;34;873826;tzinfo=datetime.timezone.utc);'2';'Produto object (2)';3;'';7;1
+django_session;'iib5oisnkzs26opjh6iuay6r0vtcxq5o';'.eJxVjDkOwjAUBe_iGll24pWSPmeI_gYOIEeKkwpxd4iUAto3M--lRtjWMm5NlnFidVZWnX43BHpI3QHfod5mTXNdlwn1ruiDNj3MLM_L4f4dFGjlWwNFgBiMMUJCgSOmLNEhd4yEUSjZ3oXOXhHBI3L0PSFkzik7Hwyq9wcaAzkb:1p5Uby:IfVm7vRl3AH7ud9M8ordpuahut5B2kuYM9vNsqkxpxc';datetime.datetime(2022;12;28;16;28;2;590003;tzinfo=datetime.timezone.utc)
+pages_produto;3;'product_icons/Moeda.png';'Iorgute';'Iorgute Delicinha';'Gelados';'1';datetime.date(2022;12;14);7;1
+pages_produto;4;'default.jpg';'eqweqweqwe';'Delicia Gostosa';'Gelados';'0';datetime.date(2022;12;14);13123;1
+pages_produto;5;'product_icons/none.png';'dasdasd';'dsadasd';'asdasdasd';'1';datetime.date(1111;11;11);1;1
+pages_produto;6;'product_icons/iorgute.jpeg';'Iorgute Virgor Vitrus';'Iorgute Vigor Frutas Vermelhas';'Gelados';'1';datetime.date(1111;11;11);40;1

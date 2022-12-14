@@ -31,7 +31,12 @@
     <div class="sidenav-header">
       <i class="fas fa-times p-3 cursor-pointer text-white opacity-5 position-absolute end-0 top-0 d-none d-xl-none"
         aria-hidden="true" id="iconSidenav"></i>
+<<<<<<< HEAD
       <a class="navbar-brand m-0" href=" {% url 'home'%}">
+=======
+      <a class="navbar-brand m-0" href=" {% url 'home'%}"
+        target="_blank">
+>>>>>>> f35d542 (Cadastro e edição de produtos)
         <img src="{% static 'assets/img/logo-ct.png'%}" class="navbar-brand-img h-100" alt="main_logo">
         <span class="ms-1 font-weight-bold text-white">ToP</span>
       </a>
@@ -165,8 +170,13 @@
         </div>
       </div>
     </nav>
+<<<<<<< HEAD
     <!-- End Navbar --><a id="linke" class="linke" style="color: white;" href="{% url 'form'%}">
     <button type="button" class="btn btn-dark">Adicionar novo produto</button></a>
+=======
+    <!-- End Navbar -->
+    <button type="button" class="btn btn-dark"><a id="linke" class="linke" style="color: white;" href="{% url 'cadastrar_produto'%}">Adicionar novo produto</a></button>
+>>>>>>> f35d542 (Cadastro e edição de produtos)
     <div class="row">
       <div class="col-12">
         <div class="card my-4">
@@ -190,20 +200,34 @@
                   </tr>
                 </thead>
                 <tbody>
+<<<<<<< HEAD
+=======
+                  {% for product in products %}
+>>>>>>> f35d542 (Cadastro e edição de produtos)
                   <tr>
                     <td>
                       <div class="d-flex px-2 py-1">
                         <div>
+<<<<<<< HEAD
                           <img src="{% static 'assets/img/products/acucar.jpg'%}" class="avatar avatar-sm me-3 border-radius-lg"
                             alt="user1">
                         </div>
                         <div class="d-flex flex-column justify-content-center">
                           <h6 class="mb-0 text-sm">Açúcar Cristalino</h6>
                           <p class="text-xs text-secondary mb-0">Zuzu</p>
+=======
+                          <img src="{{ product.icon.url }}" class="avatar avatar-sm me-3 border-radius-lg"
+                            alt="user1">
+                        </div>
+                        <div class="d-flex flex-column justify-content-center">
+                          <h6 class="mb-0 text-sm">{{ product.nome }}</h6>
+                          <p class="text-xs text-secondary mb-0">{{ product.descricao }}</p>
+>>>>>>> f35d542 (Cadastro e edição de produtos)
                         </div>
                       </div>
                     </td>
                     <td>
+<<<<<<< HEAD
                       <p class="text-xs font-weight-bold mb-0">Carboidratos</p>
                       <p class="text-xs text-secondary mb-0">Não-perecível</p>
                     </td>
@@ -245,11 +269,34 @@
                     </td>
                     <td class="align-middle">
                       <a href="javascript:;" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip"
+=======
+                      <p class="text-xs font-weight-bold mb-0">{{ product.tipo }}</p>
+                      <p class="text-xs text-secondary mb-0">{% if product.perecivel == '1' %}Perecivel{% else %}Não Perecivel{% endif %}</p>
+                    </td>
+                    <td class="align-middle text-center text-sm">
+                      {% if product.quantidade >= 10 %}
+                      <span class="badge badge-sm bg-gradient-success">Em Estoque</span>
+                      {% elif product.quantidade <= 9 %}
+                      <span class="badge badge-sm bg-gradient-secondary">Baixo Estoque</span>
+                      {% else %}
+                      <span class="badge badge-sm bg-gradient-danger">Sem Estoque</span>
+                      {% endif %}
+                    </td>
+                    <td class="align-middle text-center">
+                      <span class="text-secondary text-xs font-weight-bold">{{ product.validade }}</span>
+                    </td>
+                    <td class="align-middle">
+                      <a href="{% url 'editar_produto' product.id %}" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip"
+>>>>>>> f35d542 (Cadastro e edição de produtos)
                         data-original-title="Edit user">
                         Editar
                       </a>
                     </td>
                   </tr>
+<<<<<<< HEAD
+=======
+                  {% endfor %}
+>>>>>>> f35d542 (Cadastro e edição de produtos)
                 </tbody>
               </table>
             </div>

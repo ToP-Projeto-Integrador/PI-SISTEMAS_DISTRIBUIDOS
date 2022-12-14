@@ -1,0 +1,6 @@
+FROM python:3
+ENV PYTHONNUNBUFFERED=1
+MAINTAINER jorge.luiz.g217@gmail.com
+RUN apt-get -y install libpq-dev gcc && pip install psycopg2-binary
+WORKDIR /backup
+COPY backup/* /backup/

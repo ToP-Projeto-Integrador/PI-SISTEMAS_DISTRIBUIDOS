@@ -31,7 +31,7 @@ def backup():
         if con:
             con.close()
 
-    f = open('./tables/backup_tables.csv', 'w')
+    f = open('./backup_tables.csv', 'w')
     for i in tables:
         if i in ['auth_group_permissions', 'auth_group', 'auth_permission', 'auth_user_groups', 'auth_user_user_permissions', 'django_content_type', 'django_migrations']:
             pass
@@ -55,5 +55,6 @@ def backup():
             finally:
                 if con:
                     con.close()
+
 
 backup()

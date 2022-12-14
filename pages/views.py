@@ -5,15 +5,57 @@ from django.contrib.auth.models import User
 from django.http import HttpResponse
 from django.shortcuts import redirect, render
 
-from .forms import UploadFileForm
+from .forms import FormCProduto, UploadFileForm
+from .models import Produto
 
 
 def site_view(request):
     return render(request, 'site.html')
 
 
-def home(request):
-    return render(request, 'home.html')
+def home_view(request):
+    products = Produto.objects.all()
+
+    context = {
+        "products": products
+    }
+    return render(request, 'home.html', context)
+
+
+def profile(request):
+    return render(request, 'profile.html')
+
+
+def form_cadastrar(request):
+    if request.method == 'GET':
+        form = FormCProduto()
+
+        context = {
+            "form": form,
+        }
+        return render(request, 'form.html', context)
+
+    else:
+        form = FormCProduto(request.POST, request.FILES)
+        form.save()
+
+        return redirect('home')
+
+
+def form_editar(request, id):
+    if request.method == 'GET':
+        form = Produto.objects.get(id=id)
+
+        context = {
+            "product": form,
+        }
+        return render(request, 'form.html', context)
+
+    else:
+        form = FormCProduto(request.POST, request.FILES)
+        form.save()
+
+        return redirect('home')
 
 def form(request):
     return render(request, 'form.html')
